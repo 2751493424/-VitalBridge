@@ -42,6 +42,7 @@
       "level": "normal",
       "platforms": ["phone"],
       "body": "测试中，www.bing.com。222"
+      "image": "images/豆包.png"
     }
   ]
 }
