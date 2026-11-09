@@ -10,15 +10,7 @@
 - 不是三星官方产品，与 Samsung 无从属或授权关系。
 - 本仓库**不提供任何开源许可证**，详见「权利声明」。
 
-## 模块
-
-| 目录 | 内容 |
-| --- | --- |
-| `core/` | 共享模块：Room 数据库、数据模型、两端通信协议、文本与派生量计算 |
-| `app/` | 手机端：读取三星健康 / Health Connect、经蓝牙接收手表数据、历史记录与图表 UI |
-| `wear/` | 手表端：传感器测量、结果展示、与手机同步 |
-
-主要功能：心电波形与节律复查、心率 / 血氧 / 体温 / 睡眠 / 活动等记录查看，手表端手动测量，血压记录与预估参考，本地数据备份，以及手机—手表之间的自动同步。
+源码位于三个目录：`app/`（手机端）、`core/`（共享模块）、`wear/`（手表端）。
 
 ## 构建前置
 
@@ -55,9 +47,7 @@ gradle :app:assembleRelease
 | `app/.../Stats.kt` → `BASE_URL` | 空串 | 匿名统计；留空即整个模块静默不工作（默认关闭） |
 | `app/src/main/assets/legal/*.txt` | `contact@example.com` | 四语言隐私政策里的联系邮箱与公告地址 |
 
-`.invalid` 是 RFC 2606 保留的顶级域，保证不会被解析到真实主机。仓库中保留的非私有 URL 只有：Android XML 命名空间 `schemas.android.com`、Gradle 依赖仓库 `jitpack.io`、权利声明中对第三方参考项目的致谢链接，以及注释里用于解释 URL 解析规则的示例域名（`example.org` / `attacker.example`）。
-
-源码注释中对内部构建工具、离线校验台架和未公开设计文档的引用已泛化为通用表述，公开仓库内没有指向未公开资源的死链。
+`.invalid` 是 RFC 2606 保留的顶级域，保证不会被解析到真实主机。仓库中保留的非私有 URL 只有：Android XML 命名空间 `schemas.android.com`、Gradle 依赖仓库 `jitpack.io`，以及注释里用于解释 URL 解析规则的示例域名（`example.org` / `attacker.example`）。
 
 ## 数据说明
 
@@ -69,7 +59,7 @@ gradle :app:assembleRelease
 
 本仓库内容仅用于技术展示与代码审阅。未经版权所有者书面许可，不得复制、修改、合并、发布、分发、再许可或用于商业用途。仓库中不存在 `LICENSE` 文件，即表示未授予任何开源许可。
 
-仓库内出现的第三方 SDK 名称、接口与文档权利归各自所有者所有；本仓库不包含任何第三方 SDK 二进制。设计思路参考 [Geminiman-WearOS-Manager](https://github.com/ITDev93/Geminiman-WearOS-Manager)，本实现为独立编写。
+仓库内出现的第三方 SDK 名称、接口与文档权利归各自所有者所有；本仓库不包含任何第三方 SDK 二进制。
 
 ## 免责声明
 

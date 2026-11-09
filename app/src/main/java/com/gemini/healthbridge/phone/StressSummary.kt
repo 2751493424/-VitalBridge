@@ -72,7 +72,7 @@ object StressSummary {
      *
      * 代价要说清：**只测 PPG、从不测心电的用户拿不到压力分**。
      * 让 PPG 参与需要给它**单独一套基线**（两套基线各自成立再谈并列展示），
-     * 那是独立的一步，不在本次范围内。这条边界在项目设计说明里也记着。
+     * 那是独立的一步，不在本次范围内。这条边界同样成立。
      */
     fun historyOf(hrv: List<HrvSessionEntity>): List<Stress.Obs> =
         hrv.asSequence()

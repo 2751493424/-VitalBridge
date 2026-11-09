@@ -75,7 +75,7 @@ object EcgAnalyzer {
          * 参考点就整体晚 93~107ms、且逐拍抖动 ±20~25ms（见 `snapToQrs` 的注释）。
          *
          * ⚠ 为什么由这里给出、而不是让 `Ptt` 自己再检一遍：
-         * **项目设计说明明确记过「两边各写一套必然漂移」**。QRS 检出只有这一处实现
+         * **「两边各写一套必然漂移」**。QRS 检出只有这一处实现
          * （`EcgSignal.detectQrsPeaks` + `snapToQrs` 那条链路），PAT 只是它的下游消费者。
          */
         val rPeaks: List<Int> = emptyList(),

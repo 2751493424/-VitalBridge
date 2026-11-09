@@ -2048,7 +2048,7 @@ object SamsungHealthReader {
     // |---|---|---|---|
     // | 时间序列 | `readData` | 实现 `DataType.Readable<…, DualTimeBuilder>` | [readSeries] |
     // | 聚合     | `aggregateData` | **只**暴露 `AggregateOperation` 常量 | [aggregate] |
-    // | 写入     | `insertData` | 实现 `DataType.Writeable` | **本文件没做**（见项目设计说明） |
+    // | 写入     | `insertData` | 实现 `DataType.Writeable` | **本文件没做** |
     //
     // ⚠ 最容易踩的一点：`Steps` / `ActivitySummary` / 六类 Goal **没有** `readDataRequestBuilder`
     // （它们 `extends DataType` 就完了）。第一次看到时会以为"这类型不可用"，
@@ -2949,7 +2949,7 @@ object SamsungHealthReader {
         //    而基接口上只有 `build()` —— 于是 `setPageSize` / `setOrdering` /
         //    `setLocalDateFilter` 全都"解析不到"（我第一版就是这么错的，报错只说
         //    Unresolved reference 'setPageSize'，完全不提示是类型参数的问题）。
-        //    六类目标的算子恰好**全部**用这个 builder（见项目设计说明的算子表），所以写实是安全的。
+        //    六类目标的算子恰好**全部**用这个 builder（按算子表），所以写实是安全的。
         suspend fun <T : Any> lastOf(
             id: String,
             type: DataType,

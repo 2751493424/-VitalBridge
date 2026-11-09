@@ -118,7 +118,7 @@ interface BloodPressureDao {
  *
  * ⚠ **本表刻意不参与手表同步**：`patMs` 已经在 `ecg_records` 里同步，
  * 而校准样本天然产生于手机端（用户在手机上录袖套）。若将来手表端也要引导
- * 配对采集，就必须把它接进项目设计说明那三处同步硬约定。
+ * 配对采集，就必须把它接进那三处同步硬约定。
  */
 @Dao
 interface BpCalibrationSampleDao {
