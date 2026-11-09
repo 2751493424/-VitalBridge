@@ -49,6 +49,7 @@ gradle :app:assembleRelease
 | `app/.../WatchOta.kt` → `BASE` / `TRUSTED_HOSTS` | `https://REPLACE-ME.invalid/` / `REPLACE-ME.invalid` | 手表包清单地址与下载主机白名单，**两处必须一起改** |
 | `wear/.../WatchOtaClient.kt` → `BASE` | 同上 | 手表端自更新地址，需与手机端一致 |
 | `app/.../Stats.kt` → `BASE_URL` | 空串 | 匿名统计；留空即整个模块静默不工作（默认关闭） |
+| `app/.../MainActivity.kt` → `DONATE_URL` | `https://REPLACE-ME.invalid/donate.html` | 捐赠页；本仓库根目录有 `donate.html`，可部署到你自己的静态托管 |
 | `app/src/main/assets/legal/*.txt` | `contact@example.com` | 四语言隐私政策里的联系邮箱与公告地址 |
 
 `.invalid` 是 RFC 2606 保留的顶级域，保证不会被解析到真实主机。仓库中保留的非私有 URL 只有：Android XML 命名空间 `schemas.android.com`、Gradle 依赖仓库 `jitpack.io`，以及注释里用于解释 URL 解析规则的示例域名（`example.org` / `attacker.example`）。
