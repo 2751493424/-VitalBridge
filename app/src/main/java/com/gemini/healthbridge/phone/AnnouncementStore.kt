@@ -154,7 +154,7 @@ object AnnouncementStore {
         for (it in items) if (it.id !in seen) seen[it.id] = atMs
 
         // ⚗ 合并规则走 core 的**纯函数** [Announcement.mergeHistory] ——
-        //   那样它才在 anncheck 台架里有断言（本文件依赖 SharedPreferences，台架跑不了）。
+        //   那样它才在离线校验里能直接断言（本文件依赖 SharedPreferences，跑不了离线用例）。
         val merged = Announcement.mergeHistory(old, items, MAX_HISTORY)
 
         // ⚠ 时间戳表也跟着裁剪，且**以合并后的结果为准** —— 否则历史裁掉了、

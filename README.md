@@ -26,6 +26,8 @@
 
   文件名与 `app/build.gradle.kts`、`wear/build.gradle.kts` 里的 `files("libs/...")` 一致；若拿到的是其它版本，同步修改这两处。没有这两个文件无法通过依赖解析。
 
+- **引导图（需自备）**：`app/src/main/res/drawable-nodpi/` 下的 `guide_*` 是操作步骤截图，**涉及第三方应用界面版权，不随仓库分发**。缺少这些文件时，引导页相关的 `R.drawable.guide_*` 引用会导致编译失败；如需完整构建，请自行准备同名图片，或把引导页里对应引用换成自己的图。文件名清单见 `drawable-nodpi/README.txt`。
+
 - **签名（可选）**：构建脚本会读取仓库根目录的 `keystore.properties`，字段为 `storeFile` / `storePassword` / `keyAlias` / `keyPassword`。文件缺失时自动回退到 debug 签名，构建不会因此失败。**密钥文件与 `keystore.properties` 都不要放进版本库**（已在 `.gitignore` 中排除）。
 
 ```bash
