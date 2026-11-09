@@ -108,7 +108,13 @@
     line-height: 0;
   }
   .qr-box img { display: block; width: 240px; height: 240px; }
-  .qr-hint { margin-top: 12px; color: var(--muted); font-size: 12px; }
+  .qr-hint { margin-top: 12px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+  .qr-hint .en {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    line-height: 1.55;
+  }
 
   .note {
     color: var(--muted);
@@ -170,16 +176,20 @@
     <div class="qr-hint">扫码后请自行确认金额 · Enter any amount you like</div>
   </section>
 
-  <!-- 微信收款二维码：拿到码之后把 .hidden 去掉、补上 <img src="donate/wechat.png"> 即可 -->
-  <section class="qr-card hidden" id="wechat">
+  <!-- 微信赞赏码：小额走这里；超过 29 元建议用上面的支付宝并备注手机号（便于对账/联系） -->
+  <section class="qr-card" id="wechat">
     <div class="qr-head">
       <span class="dot"></span>
-      <span class="qr-title">微信 · WeChat</span>
+      <span class="qr-title">微信赞赏码 · WeChat</span>
     </div>
     <div class="qr-box">
-      <img src="donate/wechat.png" width="240" height="240" alt="微信收款二维码">
+      <img src="donate/wechat.png" width="240" height="240" alt="微信赞赏码">
     </div>
-    <div class="qr-hint">扫码后请自行确认金额 · Enter any amount you like</div>
+    <div class="qr-hint">
+      金额随意。单笔超过 29 元时，建议改用上面的支付宝收款码，并在转账备注里留下手机号。
+      <span class="en">Any amount is welcome. For amounts over ¥29, please use the Alipay code
+      above instead, and put your phone number in the payment note.</span>
+    </div>
   </section>
 
   <p class="note">
