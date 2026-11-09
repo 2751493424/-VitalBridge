@@ -144,6 +144,8 @@ import com.gemini.healthbridge.phone.ui.OverviewScreen
 import com.gemini.healthbridge.phone.ui.ThemeBackdropLayer
 import com.gemini.healthbridge.phone.ui.backdropTopColor
 import com.gemini.healthbridge.phone.ui.ThemeScreen
+import com.gemini.healthbridge.phone.ui.DonateEntryCard
+import com.gemini.healthbridge.phone.ui.DonateScreen
 import com.gemini.healthbridge.phone.ui.appPageBg
 import com.gemini.healthbridge.phone.ui.AppTile
 import com.gemini.healthbridge.phone.ui.AppHairline
@@ -612,6 +614,17 @@ private sealed interface UpdateUi {
 private const val LEGAL_ONLINE_URL =
     "https://REPLACE-ME.invalid/legal/index.html"
 
+/**
+ * **捐赠页地址**（2026-11-09）。
+ *
+ * 收款二维码**不随包分发**：它放在仓库 `main` 分支根目录的静态页里（GitHub Pages），
+ * 换码/改文案都只动网页，不用重新出包。
+ *
+ * ⚠ 只能走 `https`：`openUrl()` 只放行 http/https，写成别的 scheme 点了毫无反应且不报错。
+ */
+private const val DONATE_URL =
+    "https://REPLACE-ME.invalid/donate.html"
+
 /** 手表更新的 UI 状态（2026-10-22）：让"推送"像手机更新一样有进度、有内容。 */
 /**
  * 手表更新的界面状态。
@@ -704,6 +717,17 @@ private sealed interface Route {
      *   而整屏页还能给出唯一的返回路径（与公告页同一处理）。
      */
     data object PersonAuth : Route
+
+    /**
+     * **捐赠页**（2026-11-09 用户要求）。
+     *
+     * 入口是「用户」页最顶上那张 [DonateEntryCard]（用户原话「放到软件的用户的个人前面，
+     * 这样更醒目」）。这一页只讲三件事：自愿、不构成购买、不退款；唯一出口是用系统浏览器
+     * 打开捐赠页（二维码在那边，不随包分发）。
+     *
+     * ⚠ 与「授权」「公告」同样是二级页：底部导航常驻，返回只退这一层。
+     */
+    data object Donate : Route
 }
 
 /**
@@ -2294,6 +2318,20 @@ class MainActivity : ComponentActivity() {
                         routeHandled = true
                     }
 
+                    is Route.Donate -> {
+                        // ⚠ 与其它 route 一样必须包 `SaveableStateProvider`：
+                        //   静态校验脚本数「route 分支数 vs provider 数」，少一个就报。
+                        screenStates.SaveableStateProvider("route:donate") {
+                            DonateScreen(
+                                onBack = { route = Route.Tabs },
+                                // 只开浏览器，不做任何支付集成：二维码在网页那边，
+                                // 换码不用重新出包；也避免把支付工具的逻辑焊进健康 App。
+                                onDonate = { openUrl(DONATE_URL) },
+                            )
+                        }
+                        routeHandled = true
+                    }
+
                     is Route.PersonAuth -> {
                         screenStates.SaveableStateProvider("route:person-auth") {
                             PersonAuthScreen(
@@ -2388,6 +2426,8 @@ class MainActivity : ComponentActivity() {
                             // 原来是这一行下面展开的面板，用户说要"另一个新的页面"）。
                             // 与公告页同走 `Route`：返回路径唯一。
                             onOpenAuth = { route = Route.PersonAuth },
+                            // 捐赠页（2026-11-09）：入口在「用户」页最顶上那张卡。
+                            onOpenDonate = { route = Route.Donate },
                             // 补导历史：自动同步只覆盖今天（心率/血氧）与近 30 天（血压），
                             // 想要更早的历史记录可以走这里。属于可选项，不影响日常使用。
                             onBackfill = {
@@ -14190,6 +14230,13 @@ class MainActivity : ComponentActivity() {
         onAuthSamsungAwait: suspend () -> Unit,
         /** 打开整屏的授权页（[PersonAuthScreen]）。入口是「个人」段里「授权」那一行。 */
         onOpenAuth: () -> Unit,
+        /**
+         * 打开捐赠页（[DonateScreen]，2026-11-09）。
+         *
+         * 入口是页面**最顶上**那张卡 —— 用户要求「放到软件的用户的个人前面，这样更醒目」，
+         * 所以它在「个人」这个分组标题之前，不属于任何设置组。
+         */
+        onOpenDonate: () -> Unit,
         onBackfill: () -> Unit,
         backupBusy: Boolean,
         backupPath: String,
@@ -14279,6 +14326,12 @@ class MainActivity : ComponentActivity() {
             contentPadding = PaddingValues(16.dp),
             verticalArrangement = Arrangement.spacedBy(2.dp),
         ) {
+            // ── 捐赠入口（2026-11-09）──
+            // ⚠ 放在「个人」**之前**：用户原话「放到软件的用户的个人前面，这样更醒目」。
+            //   它不是设置项 —— 塞进 SettingsGroup 会和「用户资料 / 授权」混成一组，
+            //   所以单独一张卡、独立一行，且不跟随后面的 `Spacer(24.dp)` 分组节奏。
+            item { DonateEntryCard(onClick = onOpenDonate) }
+
             // ── 个人 ──
             item { SettingsSection(stringResource(R.string.s_00284e38)) }
             item {

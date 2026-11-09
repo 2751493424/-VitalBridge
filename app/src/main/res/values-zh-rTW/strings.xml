@@ -31,6 +31,7 @@
     <string name="glyph_diet">食</string>
     <string name="glyph_glucose">糖</string>
     <string name="glyph_ihrn">律</string>
+    <string name="glyph_donate">捐</string>
     <string name="feat_activity_sub">步數 · 活動量 · 運動紀錄</string>
     <string name="feat_diet_sub">攝取熱量 · 飲水</string>
     <string name="feat_glucose_sub">需血糖機 / CGM 寫入三星健康</string>
@@ -121,6 +122,7 @@
     <string name="s_861e53d0">%1$s 步</string>
     <string name="s_86bb9d34">%1$s 分鐘</string>
     <string name="s_3d5a8aa9">%1$s 個</string>
+    <string name="s_4b837a7d">%1$s/%2$s mmHg（%3$s）。\n這筆記錄和與它配對的校準樣本會一起刪除，無法復原。</string>
     <string name="s_fe8c30a0">%1$s · 袖套 %2$s/%3$s · PAT %4$s ms</string>
     <string name="s_04f24bb7">%1$s 步</string>
     <string name="s_dc125432">%1$s / %2$s 段</string>
@@ -202,9 +204,13 @@
     <string name="s_51a8f8fd">‹ 返回</string>
     <string name="s_18458212">‹ 返回列表</string>
     <string name="s_f27447da">≥140/90 屬偏高（單位 mmHg）。參考值只作對照，</string>
+    <string name="s_ebcc53b4">① 先記錄一次真實血壓</string>
     <string name="s_453d4555">① 這個資料類型在你的機器與地區是否開放（它要 Galaxy Watch7 以上 + 三星帳號，</string>
     <string name="s_832e24a0">② 昨天那行是 null 或 0 → 只能靠本機每天落庫，</string>
+    <string name="s_a7ee92c9">② 累積滿 %1$s 組才會出數值</string>
     <string name="s_91d17a6f">③ 三星健康有沒有真的替你算過這一天的分（它按天算，</string>
+    <string name="s_342fea22">③ 每天最多 %1$s 組</string>
+    <string name="s_1c789b71">④ 量血壓前的準備</string>
     <string name="s_401bcbcf">⚠ App 清單漏聲明 %1$s 項</string>
     <string name="s_bf7c8c9f">⚠ 寫入權限從 3 項擴到了 9 項（新增心率變異性、體脂率、</string>
     <string name="s_8c243b1d">⚠ 有類型顯示「無寫入權限」時，其它類型仍然寫成功了。</string>
@@ -249,6 +255,7 @@
     <string name="s_02afde76">三星健康裡沒有體成分記錄。\n</string>
     <string name="s_a8f762c7">三星健康裡的血壓會在打開這一頁時自動讀取</string>
     <string name="s_927340e7">三星健康裡的運動記錄來自手錶/手環的自動識別或你手動開始的運動。</string>
+    <string name="s_03523d38">三星健康裡還沒設定每日目標</string>
     <string name="s_2b6695b2">三星健康裡還沒設這項目標</string>
     <string name="s_dd13920e">三星健康讀不到，只顯示本機已保存的記錄</string>
     <string name="s_acc1a249">三星健康讀取失敗：%1$s: %2$s</string>
@@ -284,10 +291,13 @@
     <string name="s_00004e2d">中</string>
     <string name="s_00346687">中斷連線</string>
     <string name="s_a129ddf4">中間清醒</string>
+    <string name="s_0028a0c9">主題</string>
     <string name="s_ccb57c49">也就是說，即使它把「呼吸頻率」這個成品值開放了，我們也只能讀它算好的結果，</string>
     <string name="s_55523da3">也是最佳心率模式的一部分。</string>
     <string name="s_0028aa87">今天</string>
+    <string name="s_168ca939">今天已經記錄 4 組了</string>
     <string name="s_3c2e6bc9">今天是週期第 %1$s 天</string>
+    <string name="s_1ed34e70">今天還沒有活動數據</string>
     <string name="s_8fe82d81">今天還沒有活動記錄。\n</string>
     <string name="s_1e252e0e">今天（對照）</string>
     <string name="s_0028b743">今日</string>
@@ -297,6 +307,7 @@
     <string name="s_a99b81a9">今日概覽</string>
     <string name="s_b5e353e2">今日沒有落在睡眠時段的心率資料</string>
     <string name="s_a99d3234">今日活動</string>
+    <string name="s_a9a23e2c">今日目標</string>
     <string name="s_a9ab1f42">今日血氧</string>
     <string name="s_c7a2cca7">今日資料未同步，以下為 %1$s 的資料</string>
     <string name="s_b014b051">今日資料還沒同步到，下面是本機已有的記錄</string>
@@ -306,11 +317,14 @@
     <string name="s_9ed81518">伺服器版本：v%1$s</string>
     <string name="s_4dedafea">但不去管手錶上的採集開關。在手機放一個開關只會變成「點了沒反應」</string>
     <string name="s_dd0c1b3a">佔比 %1$s%%（上限 </string>
+    <string name="s_150d4a1c">使用中</string>
+    <string name="s_c5d7eb39">使用指南</string>
     <string name="s_003c55af">使用者</string>
     <string name="s_a443263b">使用者未授予該權限</string>
     <string name="s_e0c5f91f">使用者檔案讀取</string>
     <string name="s_ccd47f8c">使用者資料</string>
     <string name="s_c5ecef37">使用說明</string>
+    <string name="s_776f285b">使用這個主題</string>
     <string name="s_a29d1be5">來自體溫計 · 非本機測量</string>
     <string name="s_5bde6600">係數區間 %1$s</string>
     <string name="s_00284e38">個人</string>
@@ -350,6 +364,7 @@
     <string name="s_002a9cc4">刪除</string>
     <string name="s_54a8cd5a">刪除並重新校準</string>
     <string name="s_cc9fb18b">刪除失敗，請重試</string>
+    <string name="s_9917273e">刪除這筆記錄？</string>
     <string name="s_617d2316">到「使用者」頁點「三星健康」即可（只影響本卡片；</string>
     <string name="s_47497027">到「使用者」頁點「三星健康」即可（這只影響本卡片；</string>
     <string name="s_dc9c34c7">到「使用者」頁點「三星健康」，授權後本 App 會自動把資料同步給手錶。</string>
@@ -360,6 +375,7 @@
     <string name="s_aa8addbc">剔除不可信讀數</string>
     <string name="s_002ac85a">功能</string>
     <string name="s_3421879d">功能開關</string>
+    <string name="s_002aabf9">動態</string>
     <string name="s_474dbe1d">勾選表示這次是靜坐 5 分鐘後測的，用作校準樣本品質更高</string>
     <string name="s_fc7d487c">匯入完成：血壓 %1$s 筆，心率 %2$s 筆（最近 %3$s 天）</string>
     <string name="s_002f63ee">匯出</string>
@@ -404,6 +420,7 @@
     <string name="s_6cdf0a29">同意並繼續</string>
     <string name="s_002b6d89">同步</string>
     <string name="s_b07e17ca">同步 %1$s 筆</string>
+    <string name="s_41bd9c79">同步三星健康後就會有數據</string>
     <string name="s_5950ff31">同步完成，待同步 HR%1$s BP%2$s </string>
     <string name="s_5b3a68f2">同步於 %1$s</string>
     <string name="s_71441f4f">名稱：脈跡 / VitalBridge　版本：%1$s</string>
@@ -424,6 +441,7 @@
     <string name="s_26719ece">在入睡的幾分鐘內，心率會逐漸減慢至靜息狀態。當進入深度睡眠</string>
     <string name="s_747ed3da">在快速眼動睡眠期間，心率也會因夢境而變化。\n\n</string>
     <string name="s_8c1ae30f">在手錶上打開系統設定，下拉找到「應用程式」</string>
+    <string name="s_1c2c71fb">在手錶上記錄一次真實血壓，或在手機端點「記錄一次血壓」，然後 5 分鐘內在手錶上測一次心電。\n兩者在同一時段，才會被配成一組校準樣本。</string>
     <string name="s_c7bf2b02">在手錶端</string>
     <string name="s_50d2205e">地區和部分機型提供 —— 國內版手錶通常沒有這個功能，所以這裡</string>
     <string name="s_c90b14e0">均值 %1$s℃ · </string>
@@ -482,6 +500,7 @@
     <string name="s_c6e129c3">展開全部 %1$s 組</string>
     <string name="s_18c211e2">已下線</string>
     <string name="s_21d47d8d">已全部授權</string>
+    <string name="s_18c44046">已刪除</string>
     <string name="s_bfcbed29">已刪除 %1$s 組校準樣本。請重新測量來建立新的校準。</string>
     <string name="s_d47b7442">已匯出 %1$s 筆：</string>
     <string name="s_e462b441">已匯出到 %1$s</string>
@@ -549,6 +568,7 @@
     <string name="s_c40be840">息屏即停）。檔位由加速度模長的標準差定檔 —— </string>
     <string name="s_04c47c3c">應用權限 → 脈跡 → 全部允許</string>
     <string name="s_708bc2b6">應用權限 → 脈跡 → 全部允許。</string>
+    <string name="s_17b106fa">我已知悉，前往捐贈</string>
     <string name="s_95cfb7a6">或到「使用者」頁授權三星健康後會自動讀取血氧序列。</string>
     <string name="s_c1d6939b">或者「兩邊狀態對不上」，比沒有更糟。</string>
     <string name="s_495e4497">或者這個功能在你的地區沒開放。</string>
@@ -608,6 +628,9 @@
     <string name="s_a490b63b">按引導把中指壓在 2 點鐘、無名指壓在 4 點鐘電極鍵上即可測量，</string>
     <string name="s_601bd0ba">按日查看</string>
     <string name="s_e733d6bb">按連續同階段合併後的時間段（點開睡眠圖看到的就是這些段）。</string>
+    <string name="s_a30868b3">捐贈完全自願：不捐贈也能使用全部功能，沒有任何功能限制，也沒有廣告。</string>
+    <string name="s_a725b039">捐贈屬於贈與，不構成購買，不換取任何商品、服務或功能特權；不支援退款，也不提供發票。</string>
+    <string name="s_30641112">捐贈頁面由 GitHub Pages 託管，需要連網。</string>
     <string name="s_003355db">授權</string>
     <string name="s_abe29abf">授權一次之後每次打開 App 都會自動同步。</string>
     <string name="s_61d6ac71">授權一次後每次打開 App 都會自動讀取血氧序列。</string>
@@ -620,6 +643,7 @@
     <string name="s_0033b776">搜尋</string>
     <string name="s_cc9063c2">摘下來也要幾十分鐘才慢慢降下來。</string>
     <string name="s_84f7cfcf">攝入熱量</string>
+    <string name="s_a919bc12">支持脈跡</string>
     <string name="s_00345819">收合</string>
     <string name="s_aa1c70f4">收縮壓範圍 %1$s~%2$s · </string>
     <string name="s_2c673e2a">收縮壓預估參考 %1$s ± %2$s mmHg</string>
@@ -682,6 +706,7 @@
     <string name="s_6f43c732">最近一段 %1$s：</string>
     <string name="s_184d5ae5">最近一段 %1$s</string>
     <string name="s_c182f86a">最近的心電沒有可用於複查的逐拍間期（舊版本記錄不帶）。</string>
+    <string name="s_f3282aa4">最近血壓</string>
     <string name="s_f329f8be">最近記錄</string>
     <string name="s_0d3cd5f8">最高 %1$s℃</string>
     <string name="s_485dbca9">最高 %1$s</string>
@@ -721,6 +746,7 @@
     <string name="s_55407ce1">本 App 自研的「PAT 脈搏到達時間」是一個時間量、換算不成 mmHg，</string>
     <string name="s_d1dfd737">本 App 與手錶都測不出核心體溫（手錶給的是腕部皮溫，低 1~3℃）。</string>
     <string name="s_59deeff9">本地健康採集 + 本地儲存 + 自研算法。\n\n</string>
+    <string name="s_40759f08">本專案由個人獨立開發與維護，伺服器、測試裝置與開發時間都靠捐贈支持。</string>
     <string name="s_aabe1042">本應用用的 samsung-health-data-api 1.1.0 裡沒有這個資料類型</string>
     <string name="s_1e7b9095">本月還沒有一組讀數配上手錶資料</string>
     <string name="s_f2592e8d">本機不支援</string>
@@ -752,6 +778,7 @@
     <string name="s_01b0a370">本頁統計的是時長最長的那一場（主睡眠）；小睡不計入，</string>
     <string name="s_6c6eccc0">查看光訊號記錄 ›</string>
     <string name="s_e722a008">查看全部公告</string>
+    <string name="s_9168db60">查看活動記錄</string>
     <string name="s_8e1a06fa">查看活動記錄 ›</string>
     <string name="s_3164187e">柱越高表示那一夜的恢復越好。50 分大致對應「每一項都剛夠」</string>
     <string name="s_75a97cae">柱高為「入睡→起床」總時長，深色為實際睡眠；點某一天看那一晚的詳情。</string>
@@ -791,6 +818,7 @@
     <string name="s_d89c6fee">正在連線…</string>
     <string name="s_003751e1">正常</string>
     <string name="s_ed232184">此功能是同步三星健康的数据，請三星健康保持後台執行後再來點擊授權。</string>
+    <string name="s_00006b65">步</string>
     <string name="s_00375a1f">步數</string>
     <string name="s_002b1184">歷史</string>
     <string name="s_4756b767">歷史睡眠</string>
@@ -799,6 +827,8 @@
     <string name="s_6ae94112">每一格是一個分量的單獨得分，與總分用同一套分級。</string>
     <string name="s_6696e5d4">每一項的明細</string>
     <string name="s_8fd49b5e">每個點是手錶上的一次點檢（絕對值）。點越少越稀疏是正常的 —— </string>
+    <string name="s_e58ac8ab">每天最多錄入 %1$s 組真實血壓，每組間隔 %2$s 分鐘以上。\n超出次數或間隔太近的記錄無效，對預估沒有幫助。</string>
+    <string name="s_615f8b76">每天最多錄入 4 組真實血壓，每組間隔 30 分鐘以上。多記的組資料無效，對預估也沒有幫助，明天再繼續吧。</string>
     <string name="s_776d85ad">每根柱子 = 該小時內本機測量的最低~最高（不是三星健康連續序列）</string>
     <string name="s_3949540a">每根柱子 = 該小時的最低~最高心率</string>
     <string name="s_0874ec81">每根柱子是該時段的最低~最高血氧。空白的小時表示三星健康在該時段沒有取樣</string>
@@ -837,6 +867,7 @@
     <string name="s_c3296cf8">清醒比睡眠低 %1$s 次/分（資料較少時該差值參考意義有限）</string>
     <string name="s_ccc54972">清醒比睡眠高 %1$s 次/分（睡眠時心率下降屬正常生理現象）</string>
     <string name="s_0038e2f3">清除</string>
+    <string name="s_f8018281">測前 30 分鐘：不運動、不抽菸、不喝咖啡或濃茶、不喝酒，並排空小便。\n安靜坐好休息 3~5 分鐘，不要說話、不要看手機。\n坐有靠背的椅子，雙腳平放地面，不要翹二郎腿。\n手臂自然放在桌上，袖帶中心與心臟同高。\n袖帶下緣在肘窩上方 2~3cm，鬆緊以能塞進 1~2 根手指為宜。</string>
     <string name="s_cb7468ec">測量姿勢</string>
     <string name="s_cb791d4c">測量指標</string>
     <string name="s_48bf839d">測量時長 %1$s 秒\n</string>
@@ -857,6 +888,7 @@
     <string name="s_528b2574">用於擬合的樣本裡混了不同體位（坐/躺/站）。體位會同時改變脈搏波到達時間的兩個組成部分，這部分影響無法從資料裡分離出來 —— 建議下次在同一體位下重測。</string>
     <string name="s_1d4fb1cf">用檔案管理器或連電腦都能直接看到）</string>
     <string name="s_eae5b8f5">用檔案管理器或電腦連線都能直接看到它，建議匯出後順手拷到電腦或網盤 —— </string>
+    <string name="s_a3e1efc3">用血壓計量完記下來</string>
     <string name="s_93892b9d">異常(code=%1$s)</string>
     <string name="s_06d440f6">當前不在易孕窗口內</string>
     <string name="s_c659ca8c">當前處於易孕窗口內（粗略估計，見下方說明）</string>
@@ -899,6 +931,7 @@
     <string name="s_88992735">竇性心律</string>
     <string name="s_c6b3ed2d">立即補一組</string>
     <string name="s_003f57d6">站立</string>
+    <string name="s_214a6718">第 %1$s 步 / 共 %2$s 步</string>
     <string name="s_60e5eb84">第 1 條是對照組：區間與上面「今日活動」讀的完全一致，它必須要有值。</string>
     <string name="s_541bcb07">第一次連線前請先輸入配對碼進行「配對」；已經配對過就直接點「連線」。</string>
     <string name="s_a43ab565">第一步 · 手機上的三星健康</string>
@@ -946,6 +979,7 @@
     <string name="s_a5fa676b">自動下載最新版，再透過無線 ADB 裝進手錶</string>
     <string name="s_0d0b8357">自動檢查更新</string>
     <string name="s_fb98e543">自己用血壓計量的讀數</string>
+    <string name="s_38bf2702">自願捐贈，用於服務與開發開銷</string>
     <string name="s_9dd48283">與你平時的基線 %1$s 接近（差 %2$s，在誤差內）</string>
     <string name="s_3135d6b8">與你自己近 %1$s 次的 RMSSD 中位數 %2$s ms 相比：</string>
     <string name="s_f30643bb">與你自己近 %1$s 次的中位數 %2$s ms 相比：</string>
@@ -968,6 +1002,7 @@
     <string name="s_2ffded78">虛線為 90%% 參考線；最低 %1$s%%（%2$s）。</string>
     <string name="s_2d76b971">蛋白 %1$sg</string>
     <string name="s_00460c4b">血壓</string>
+    <string name="s_f5a81d48">血壓預估使用指南</string>
     <string name="s_27e1f6a0">血壓預估參考</string>
     <string name="s_004624e7">血氧</string>
     <string name="s_92ec7735">血氧 &lt;90%% 的時間佔比</string>
@@ -1102,6 +1137,7 @@
     <string name="s_5f2a9d6c">連續測幾天後這裡會給出與近期中位數的比較</string>
     <string name="s_d8e40e2b">連續點擊「軟體版本」</string>
     <string name="s_5be87d32">連續點擊上方的「健康平台」小字</string>
+    <string name="s_6f029cfb">連續點擊版本號區域，直到出現 Developer mode 按鈕</string>
     <string name="s_c048f166">週期內不足 %1$s 組，本次擬合用了更早的樣本</string>
     <string name="s_6ab598e6">週期預測</string>
     <string name="s_eb21b2cc">進行比較，而不是與其他人的平均值進行比較。\n\n</string>
@@ -1124,6 +1160,7 @@
     <string name="s_2dd99001">還沒有手錶測量的體成分記錄。\n</string>
     <string name="s_abb3d9ee">還沒有氧減摘要。同步三星健康的睡眠資料後會自動生成</string>
     <string name="s_fcff5c90">還沒有腕溫點檢記錄。\n</string>
+    <string name="s_2b95b682">還沒有配成對的記錄：錄一次血壓後，5 分鐘內在手錶上測一次心電，第一組就會出現在這裡。</string>
     <string name="s_5aa35ced">部分人群（尤其是老年人）深度睡眠較少或沒有，屬正常現象。</string>
     <string name="s_004ab660">配對</string>
     <string name="s_f7dd8285">配對並連線</string>
@@ -1142,9 +1179,11 @@
     <string name="s_c9b7e3d2">錶體 %1$s℃ · </string>
     <string name="s_9312b105">開啟儲存位置</string>
     <string name="s_3a94e4a5">開啟後功能頁會多一張「經期」卡，可記錄並能看下次預測</string>
+    <string name="s_d278f148">開始使用</string>
     <string name="s_a802102b">開始日格式不對，請用 年-月-日（如 2026-08-01）</string>
     <string name="s_805214be">開始日（如 2026-08-01）</string>
     <string name="s_956785a3">開關也在手錶端 —— 光訊號的開關在手錶「血氧」頁那一行「原始光訊號」的下方。\n\n</string>
+    <string name="s_dd8212e7">間隔太近的讀數對預估沒有意義。請等滿 30 分鐘後再測一次。</string>
     <string name="s_0029fc67">關於</string>
     <string name="s_2ae5ad5d">關於呼吸頻率</string>
     <string name="s_fecb6c33">關於脈跡</string>
@@ -1154,6 +1193,8 @@
     <string name="s_d664cc77">阻抗 %1$sΩ</string>
     <string name="s_e5b8f971">隨呼吸減慢會自然下降幾個百分點。</string>
     <string name="s_4cd42cd7">隱私聲明</string>
+    <string name="s_cd60c120">離上一組還不到 30 分鐘</string>
+    <string name="s_16b709fb">需要累積 %1$s 組帶 PAT 的有效心電，才會給出預估數值。\n之後每 %2$s 天再補 %3$s 組真實血壓，軟體會自動用新樣本替換舊樣本，跟上你身體的變化。</string>
     <string name="s_d7372def">需要連網；內容與 App 內一致。</string>
     <string name="s_30ec622b">需要配對：在手錶上開啟「無線偵錯 → 使用配對碼配對裝置」，輸入其中的 6 位配對碼。</string>
     <string name="s_d3c42dde">需要重新授權一次。</string>
@@ -1189,6 +1230,7 @@
     <string name="s_659e31e6">點一下看全文</string>
     <string name="s_c967ed94">點一下開始檢查</string>
     <string name="s_64e3f3e6">點上面那行「Health Connect」去補授權 —— </string>
+    <string name="s_12393f02">點下面的按鈕會用瀏覽器開啟捐贈頁面，在那裡掃碼即可完成捐贈。</string>
     <string name="s_04be4f39">點擊「Developer mode（Samsung Health Data SDK）」</string>
     <string name="s_132158c4">點擊「健康平台」</string>
     <string name="s_453ff4cf">點擊「設定」</string>
@@ -1222,37 +1264,4 @@
     <string name="s_e668755d">，另清掉 %1$s 筆越界血氧</string>
     <string name="s_ad8803da">；使用者檔案未授予（手錶端體成分測量需要它才有資料）</string>
     <string name="s_cdd0fbda">；睡眠權限未授予（心率頁睡眠分區將用夜間時段估算）</string>
-    <string name="s_6f029cfb">連續點擊版本號區域，直到出現 Developer mode 按鈕</string>
-    <string name="s_168ca939">今天已經記錄 4 組了</string>
-    <string name="s_615f8b76">每天最多錄入 4 組真實血壓，每組間隔 30 分鐘以上。多記的組資料無效，對預估也沒有幫助，明天再繼續吧。</string>
-    <string name="s_cd60c120">離上一組還不到 30 分鐘</string>
-    <string name="s_dd8212e7">間隔太近的讀數對預估沒有意義。請等滿 30 分鐘後再測一次。</string>
-    <string name="s_f5a81d48">血壓預估使用指南</string>
-    <string name="s_c5d7eb39">使用指南</string>
-    <string name="s_ebcc53b4">① 先記錄一次真實血壓</string>
-    <string name="s_1c2c71fb">在手錶上記錄一次真實血壓，或在手機端點「記錄一次血壓」，然後 5 分鐘內在手錶上測一次心電。\n兩者在同一時段，才會被配成一組校準樣本。</string>
-    <string name="s_a7ee92c9">② 累積滿 %1$s 組才會出數值</string>
-    <string name="s_16b709fb">需要累積 %1$s 組帶 PAT 的有效心電，才會給出預估數值。\n之後每 %2$s 天再補 %3$s 組真實血壓，軟體會自動用新樣本替換舊樣本，跟上你身體的變化。</string>
-    <string name="s_342fea22">③ 每天最多 %1$s 組</string>
-    <string name="s_e58ac8ab">每天最多錄入 %1$s 組真實血壓，每組間隔 %2$s 分鐘以上。\n超出次數或間隔太近的記錄無效，對預估沒有幫助。</string>
-    <string name="s_1c789b71">④ 量血壓前的準備</string>
-    <string name="s_f8018281">測前 30 分鐘：不運動、不抽菸、不喝咖啡或濃茶、不喝酒，並排空小便。\n安靜坐好休息 3~5 分鐘，不要說話、不要看手機。\n坐有靠背的椅子，雙腳平放地面，不要翹二郎腿。\n手臂自然放在桌上，袖帶中心與心臟同高。\n袖帶下緣在肘窩上方 2~3cm，鬆緊以能塞進 1~2 根手指為宜。</string>
-    <string name="s_214a6718">第 %1$s 步 / 共 %2$s 步</string>
-    <string name="s_d278f148">開始使用</string>
-    <string name="s_9917273e">刪除這筆記錄？</string>
-    <string name="s_4b837a7d">%1$s/%2$s mmHg（%3$s）。\n這筆記錄和與它配對的校準樣本會一起刪除，無法復原。</string>
-    <string name="s_18c44046">已刪除</string>
-    <string name="s_f3282aa4">最近血壓</string>
-    <string name="s_2b95b682">還沒有配成對的記錄：錄一次血壓後，5 分鐘內在手錶上測一次心電，第一組就會出現在這裡。</string>
-    <string name="s_a3e1efc3">用血壓計量完記下來</string>
-    <string name="s_00006b65">步</string>
-    <string name="s_a9a23e2c">今日目標</string>
-    <string name="s_9168db60">查看活動記錄</string>
-    <string name="s_03523d38">三星健康裡還沒設定每日目標</string>
-    <string name="s_1ed34e70">今天還沒有活動數據</string>
-    <string name="s_41bd9c79">同步三星健康後就會有數據</string>
-    <string name="s_0028a0c9">主題</string>
-    <string name="s_776f285b">使用這個主題</string>
-    <string name="s_150d4a1c">使用中</string>
-    <string name="s_002aabf9">動態</string>
 </resources>

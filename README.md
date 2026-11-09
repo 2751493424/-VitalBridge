@@ -1,6 +1,6 @@
 # VitalBridge（脉迹）
 
-> **[支持本项目](https://2751493424.github.io/-VitalBridge/donate.html)** · 捐赠完全自愿，不影响任何功能，也不换取任何权益。
+> **[支持本项目](https://REPLACE-ME.invalid/donate.html)** · 捐赠完全自愿，不影响任何功能，也不换取任何权益。
 
 面向三星 Galaxy Watch（Wear OS / One UI Watch）的健康数据同步与查看工具，由手机端、手表端和一个共享模块组成。
 

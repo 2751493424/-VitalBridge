@@ -34,6 +34,7 @@
     <string name="glyph_diet">D</string>
     <string name="glyph_glucose">G</string>
     <string name="glyph_ihrn">R</string>
+    <string name="glyph_donate">D</string>
     <string name="feat_activity_sub">Steps · Activity · Workouts</string>
     <string name="feat_diet_sub">Calories · Water</string>
     <string name="feat_glucose_sub">Requires a meter / CGM writing to Samsung Health</string>
@@ -135,6 +136,7 @@
     <string name="s_3d5a8aa9">%1$s</string>
     <string name="s_5e2af3a1">%1$s pre-upgrade database snapshots (kept automatically on schema changes, as a fallback)</string>
     <string name="s_edc3390c">%1$s others were computed by an earlier version (different R-peak reference point),</string>
+    <string name="s_4b837a7d">%1$s/%2$s mmHg (%3$s).\nThis reading and its paired calibration sample will both be deleted. This cannot be undone.</string>
     <string name="s_fe8c30a0">%1$s · cuff %2$s/%3$s · PAT %4$s ms</string>
     <string name="s_04f24bb7">%1$s steps</string>
     <string name="s_dc125432">%1$s / %2$s segments</string>
@@ -185,9 +187,13 @@
     <string name="s_fb7c4e77">1. Connect the watch first — open "VitalTrace" on the watch and wait for the home screen to show "Connected".</string>
     <string name="s_bbabe2e7">1. Open VitalBridge on the watch and keep the phone nearby\n</string>
     <string name="s_15daf9e7">1. Open VitalTrace on the watch and keep the phone nearby\n</string>
+    <string name="s_ebcc53b4">1. Record one real reading first</string>
+    <string name="s_a7ee92c9">2. %1$s paired groups before any number</string>
     <string name="s_b8e4224e">2. Open "Samsung Health" once more, then come back to this App and wait a moment —</string>
     <string name="s_b9b2a82e">2. Opening this App on the phone automatically handshakes with the watch and syncs\n</string>
     <string name="s_df05a6af">3. Samsung Health heart rate / blood oxygen / blood pressure / sleep are also read and stored locally automatically, with no manual import\n</string>
+    <string name="s_342fea22">3. Up to %1$s readings a day</string>
+    <string name="s_1c789b71">4. Before you measure</string>
     <string name="s_76c27a85">4. Samsung Health only needs authorizing once; afterward it syncs automatically every time you open the App\n</string>
     <string name="s_a8213e57">5. Heart rate is measured by the watch in real time and stored; blood pressure and ECG conclusions are recorded manually on the watch\n</string>
     <string name="s_d49aa3f7">5k/250k impedance ratio</string>
@@ -196,6 +202,7 @@
     <string name="s_ad8803da">; user profile permission not granted (body composition on the watch needs it for profile data)</string>
     <string name="s_de90eea7">A baseline needs at least a couple of weeks of spot checks; there aren\'t enough yet.</string>
     <string name="s_50fe5272">A component that did not take part this time still gets a cell -- see the notes below for the reason.</string>
+    <string name="s_a725b039">A donation is a gift, not a purchase. It does not buy any goods, services or feature privileges, and is non-refundable with no invoice.</string>
     <string name="s_77c19f54">A new version is available</string>
     <string name="s_041c196f">A single measurement covers only about 30 seconds; not finding one does not mean there is none.</string>
     <string name="s_619f956b">A sync runs automatically once authorization finishes.</string>
@@ -227,7 +234,9 @@
     <string name="s_21d47d8d">All authorized</string>
     <string name="s_b15711d7">All data is kept on this device: nothing is uploaded, no account is needed, and it disappears only on uninstall.\n\n</string>
     <string name="s_c6afe843">All readings for the day</string>
+    <string name="s_168ca939">Already recorded 4 readings today</string>
     <string name="s_b2cf431e">Alternatively, enable it manually in the Health Connect app:</string>
+    <string name="s_16b709fb">An estimate appears only after %1$s valid ECGs with PAT are accumulated.\nAfter that, add %3$s real readings every %2$s days; older samples are replaced automatically so the estimate follows changes in your body.</string>
     <string name="s_0029fe8e">Announcements</string>
     <string name="s_f3f01375">Anonymous usage stats</string>
     <string name="s_2e4d822f">Antioxidant index</string>
@@ -258,6 +267,7 @@
     <string name="s_c90b14e0">Avg %1$s℃ · </string>
     <string name="s_7f1f3017">Avg HR %1$s</string>
     <string name="s_87785628">Avg SpO2 %1$s%%, lowest %2$s%%</string>
+    <string name="s_f8018281">Avoid exercise, smoking, coffee, strong tea and alcohol for 30 minutes before, and empty your bladder.\nSit quietly for 3-5 minutes; do not talk or look at your phone.\nUse a chair with a backrest, feet flat on the floor, legs uncrossed.\nRest your arm on the table so the cuff is level with your heart.\nCuff edge 2-3 cm above the elbow crease, snug enough to slip in 1-2 fingers.</string>
     <string name="s_0038de21">Awake</string>
     <string name="s_ccc54972">Awake heart rate is %1$s bpm higher than asleep (a drop in heart rate during sleep is normal physiology)</string>
     <string name="s_c3296cf8">Awake heart rate is %1$s bpm lower than asleep (with little data this difference has limited value as a reference)</string>
@@ -293,6 +303,7 @@
     <string name="s_b4734435">Blood oxygen values: measurements recorded on this watch\nNo continuous series, hence no hourly chart</string>
     <string name="s_b7011fb6">Blood oxygen varies naturally. Because breathing slows, it usually drops a few percentage points during sleep.\n\n</string>
     <string name="s_27e1f6a0">Blood pressure estimate (reference only)</string>
+    <string name="s_f5a81d48">Blood pressure estimate guide</string>
     <string name="s_c60f3406">Bluetooth: connected to %1$s</string>
     <string name="s_8ab7e639">Bluetooth: not started</string>
     <string name="s_6c83df94">Bluetooth: open the watch app to connect</string>
@@ -374,6 +385,8 @@
     <string name="s_002a9cc4">Delete</string>
     <string name="s_54a8cd5a">Delete and recalibrate</string>
     <string name="s_cc9fb18b">Delete failed, please try again</string>
+    <string name="s_9917273e">Delete this reading?</string>
+    <string name="s_18c44046">Deleted</string>
     <string name="s_bfcbed29">Deleted %1$s calibration readings. Measure again to build a new calibration.</string>
     <string name="s_c2381a3d">Derived metrics</string>
     <string name="s_938bc3fb">Desaturation events</string>
@@ -390,6 +403,7 @@
     <string name="s_00346687">Disconnect</string>
     <string name="s_1b4da0b9">Disconnected</string>
     <string name="s_004911d2">Distance</string>
+    <string name="s_a30868b3">Donating is entirely voluntary: every feature works without it, with no limits and no ads.</string>
     <string name="s_002f3ab4">Done</string>
     <string name="s_41a89130">Download and install</string>
     <string name="s_883c6e83">Download complete, opening the installer</string>
@@ -459,6 +473,7 @@
     <string name="s_93cc5707">Found in %2$s of the last %1$s recordings. Measure again at rest; if it keeps appearing, see a doctor.</string>
     <string name="s_004e6a12">Frequency domain</string>
     <string name="s_a29d1be5">From a thermometer · not measured by this device</string>
+    <string name="s_d278f148">Get started</string>
     <string name="s_a33a136c">Go back to Settings; Developer options is now at the bottom</string>
     <string name="s_47497027">Go to the "User" page and tap "Samsung Health" (this only affects this card;</string>
     <string name="s_617d2316">Go to the "User" page and tap "Samsung Health" (this only affects this card;</string>
@@ -467,6 +482,7 @@
     <string name="s_1faf4f0c">Got it</string>
     <string name="s_998a444f">Gradient %1$s℃ · </string>
     <string name="s_12c4e07d">Grant period read permission in the system dialog</string>
+    <string name="s_c5d7eb39">Guide</string>
     <string name="s_b4c804ab">HR variability %1$s bpm</string>
     <string name="s_325190e1">HRV %1$s, menstrual cycle %2$s, desaturation summary %3$s, multi-frequency impedance %4$s, </string>
     <string name="s_f6afd749">HRV heart rate variability</string>
@@ -505,6 +521,7 @@
     <string name="s_04ec4db3">How this score is built</string>
     <string name="s_4d28e489">How to enable Developer options on OneUI 8</string>
     <string name="s_cfd316bd">How to read these lines: ① if yesterday\'s line has steps → aggregates can read history,</string>
+    <string name="s_17b106fa">I understand — continue to donate</string>
     <string name="s_0c569379">IP address</string>
     <string name="s_8cefef4a">If tapping does nothing, enable it manually in the Health Connect app:</string>
     <string name="s_70a3f40e">If the authorization page will not open, or items still show as missing after checking them,</string>
@@ -520,6 +537,7 @@
     <string name="s_5b299a2e">Importing Samsung Health history…</string>
     <string name="s_ef0a73b7">In general, as you enter deep sleep the heart rate begins to slow, reaching its lowest level around the midpoint of sleep.</string>
     <string name="s_7f8ca56b">In general, blood oxygen remains above 90%% during sleep.</string>
+    <string name="s_150d4a1c">In use</string>
     <string name="s_c9d6b38f">In watch Settings, scroll to the bottom and tap About watch</string>
     <string name="s_ece2a01c">Includes data read from Samsung Health on demand</string>
     <string name="s_c70dd727">Input: %1$s beat-to-beat intervals · recorded %2$s s · </string>
@@ -540,6 +558,7 @@
     <string name="s_00288ff7">Irregular</string>
     <string name="s_ee1aeeeb">Irregular rhythm</string>
     <string name="s_b8b7645d">It already failed when requesting permission; this device may not be able to read this data type: %1$s</string>
+    <string name="s_41bd9c79">It appears after Samsung Health syncs</string>
     <string name="s_f4e6e47d">It has data only if you have measured body composition with the Samsung Health app (or Samsung Health on the watch).</string>
     <string name="s_e04ef8b8">It is affected by ambient light and LED brightness, so values are not comparable across sessions. The raw waveform is kept for our own algorithms</string>
     <string name="s_c7d75185">It is derived from height / weight / sex / age — without that profile nothing can be computed,</string>
@@ -567,10 +586,12 @@
     <string name="s_83c6179f">Latest spot check with case temperature:</string>
     <string name="s_5a292991">Lean Body Mass</string>
     <string name="s_778a9ecd">Leave-one-out: each prediction came from a model that had never seen that reading — more honest than the training residual</string>
+    <string name="s_cd60c120">Less than 30 minutes since the last reading</string>
     <string name="s_00005c11">Light</string>
     <string name="s_60e5eb84">Line 1 is the control: its range is identical to "Today\'s activity" above, so it must return a value.</string>
     <string name="s_24556aef">Local data is kept on this device permanently and is never auto-cleaned; it disappears only if you uninstall the app.</string>
     <string name="s_59deeff9">Local health collection + local storage + in-house algorithms.\n\n</string>
+    <string name="s_a3e1efc3">Log a cuff reading</string>
     <string name="s_c92be0f9">Lost the watch (wireless debugging may be off). Tap Connect to retry.</string>
     <string name="s_359d7a47">Lowest %1$s%% · Highest %2$s%%</string>
     <string name="s_1db037e1">Lowest %1$s℃ · </string>
@@ -603,6 +624,7 @@
     <string name="s_86c17ef3">More fundamentally, there is the sampling rate: Samsung\'s exposed heart rate is binned (≥1 minute) and blood oxygen is minute-level,</string>
     <string name="s_6f43c732">Most recent segment %1$s:</string>
     <string name="s_184d5ae5">Most recent segment %1$s</string>
+    <string name="s_002aabf9">Motion</string>
     <string name="s_f2751474">Multi-frequency impedance (in-house analysis)</string>
     <string name="s_03aac65f">Multi-frequency impedance is stored only on this device (neither Health Connect nor Samsung Health has an impedance entry)</string>
     <string name="s_00318dca">Must read</string>
@@ -626,6 +648,7 @@
     <string name="s_abb3d9ee">No ODI summary yet. It is generated automatically after syncing Samsung Health sleep data</string>
     <string name="s_94a9b62e">No Samsung data yet</string>
     <string name="s_d7dc3fd1">No activity data for this day.</string>
+    <string name="s_1ed34e70">No activity data for today yet</string>
     <string name="s_8fe82d81">No activity records for today yet.\n</string>
     <string name="s_9516527d">No app found to open folders. The file is at: %1$s</string>
     <string name="s_999db1d2">No beat with a clearly short interval was found in this record.</string>
@@ -636,6 +659,7 @@
     <string name="s_2dd99001">No body composition records from the watch yet.\n</string>
     <string name="s_4b26614c">No comparable history yet: HRV is mostly about your own trend,</string>
     <string name="s_63954c39">No comparable history yet: after %1$s consecutive measurements,</string>
+    <string name="s_03523d38">No daily step goal set in Samsung Health</string>
     <string name="s_0d59347b">No data source yet</string>
     <string name="s_cedcc798">No estimate possible this time</string>
     <string name="s_4c9122f9">No file selected</string>
@@ -646,6 +670,7 @@
     <string name="s_8aa6a681">No matching records. Try another keyword, or widen the time range to All.</string>
     <string name="s_c6488707">No multi-frequency impedance records yet. The watch\'s "Body composition" page has a "Multi-frequency impedance" button at the bottom,</string>
     <string name="s_b1cb7010">No optical signal records yet.\n</string>
+    <string name="s_2b95b682">No paired readings yet: log a reading, then take an ECG on the watch within 5 minutes and the first pair appears here.</string>
     <string name="s_1e7b9095">No reading this month has been paired with watch data yet.</string>
     <string name="s_4ce469da">No recent ECG data. Take a 30-second ECG on the watch, then an estimate will be shown.</string>
     <string name="s_83a9fad3">No records for this day.</string>
@@ -765,6 +790,7 @@
     <string name="s_084e5151">Reading sleep data…</string>
     <string name="s_9ec76ca6">Reading the chart</string>
     <string name="s_57c2aa80">Reading update info…</string>
+    <string name="s_dd8212e7">Readings taken too close together do not help the estimate. Please wait a full 30 minutes before measuring again.</string>
     <string name="s_fb98e543">Readings you measured with a blood pressure monitor</string>
     <string name="s_d78fcd06">Reading…</string>
     <string name="s_d7e155ac">Reading…</string>
@@ -774,10 +800,12 @@
     <string name="s_0e618507">Recalibrate?</string>
     <string name="s_2a9d865c">Recent %1$s records</string>
     <string name="s_c182f86a">Recent ECG recordings have no beat-to-beat intervals to recheck (older records did not store them).</string>
+    <string name="s_f3282aa4">Recent readings</string>
     <string name="s_f329f8be">Recent records</string>
     <string name="s_ba999569">Record a blood pressure reading</string>
     <string name="s_0c71c3e3">Record a calibration sample</string>
     <string name="s_b51da40d">Record a sample and take a watch reading at the same time</string>
+    <string name="s_1c2c71fb">Record one real reading on the watch, or tap "Record a reading" on the phone, then take an ECG on the watch within 5 minutes.\nOnly readings and ECGs from the same time window are paired into a calibration sample.</string>
     <string name="s_d0f06799">Record period</string>
     <string name="s_ad5643ff">Recorded %1$s/%2$s mmHg and wrote to Samsung Health / Health Connect</string>
     <string name="s_4a5d9045">Recorded %1$s/%2$s mmHg;</string>
@@ -894,6 +922,7 @@
     <string name="s_14469863">Stage breakdown for this sleep</string>
     <string name="s_003f57d6">Standing</string>
     <string name="s_805214be">Start date (e.g. 2026-08-01)</string>
+    <string name="s_214a6718">Step %1$s of %2$s</string>
     <string name="s_a43ab565">Step 1 · Samsung Health on the phone</string>
     <string name="s_cb64549e">Step 2 · Health Platform on the watch</string>
     <string name="s_f8424c3f">Step 3 · Turn on wireless debugging</string>
@@ -902,6 +931,7 @@
     <string name="s_4cb68609">Still %1$s paired sample(s) short of an estimate: after each cuff reading, take an ECG on the watch within the same period.</string>
     <string name="s_002b12bc">Stress</string>
     <string name="s_e8a852d4">Stress / fatigue score</string>
+    <string name="s_a919bc12">Support VitalBridge</string>
     <string name="s_002b6d89">Sync</string>
     <string name="s_5950ff31">Sync complete, pending HR%1$s BP%2$s </string>
     <string name="s_b07e17ca">Synced %1$s</string>
@@ -918,6 +948,7 @@
     <string name="s_64e3f3e6">Tap the "Health Connect" line above to grant the missing permissions —</string>
     <string name="s_5be87d32">Tap the small Health Platform title repeatedly</string>
     <string name="s_b18fb481">Tap the three dots at the top right</string>
+    <string name="s_6f029cfb">Tap the version area repeatedly until the Developer mode button appears</string>
     <string name="s_452d4754">Tap this line to open the authorization page (currently needs </string>
     <string name="s_659e31e6">Tap to read in full</string>
     <string name="s_c967ed94">Tap to start the check</string>
@@ -929,11 +960,13 @@
     <string name="s_79f19613">The ODI summary for this night is incomplete</string>
     <string name="s_d2ade356">The Samsung Health app does show "sleep respiratory rate", but it is not exposed through the Data SDK:</string>
     <string name="s_0813ae42">The body composition feature is for fitness and wellness purposes only and must not be used to diagnose or treat any condition.</string>
+    <string name="s_12393f02">The button below opens the donation page in your browser, where you can scan a QR code to donate.</string>
     <string name="s_d4e03a98">The connection expired after 10 minutes. Tap Connect to reconnect.</string>
     <string name="s_2ffded78">The dashed line is the 90%% reference; the lowest was %1$s%% (%2$s).</string>
     <string name="s_644c063b">The data is stored only locally on the watch and phone and is never uploaded.</string>
     <string name="s_90ccc526">The data on this page comes from the same source as the watch’s Heart Rate measurement page;</string>
     <string name="s_002a7690">The day before yesterday</string>
+    <string name="s_30641112">The donation page is hosted on GitHub Pages and needs an internet connection.</string>
     <string name="s_76b15655">The latest one (%1$s) could not be computed: %2$s</string>
     <string name="s_ad74c228">The latest one (%1$s) produced no conclusion:</string>
     <string name="s_abf2af0f">The light band is that hour\'s min–max heart rate (hours with a single sample have no range and show a dot only); the line joins the hourly averages.</string>
@@ -951,6 +984,7 @@
     <string name="s_0fc42223">The watch is already up to date (v%1$s)</string>
     <string name="s_311b58f2">The watch is connected via Bluetooth: %1$s</string>
     <string name="s_b25a18e7">The watch temperature feature is for fitness and wellness purposes only and must not be used to diagnose or treat any condition.</string>
+    <string name="s_0028a0c9">Themes</string>
     <string name="s_8acdf120">There are also %1$s nap(s):</string>
     <string name="s_0e2b315f">There are no period records to import in Health Connect</string>
     <string name="s_d36be231">There is a sleep record for last night, but no blood oxygen samples within the sleep period.</string>
@@ -982,6 +1016,7 @@
     <string name="s_01b0a370">This page counts only the longest session (main sleep); naps are excluded,</string>
     <string name="s_4cc65e25">This page on the phone is read-only: you can view results (body composition, multi-frequency impedance, HRV, etc.),</string>
     <string name="s_15a17e1f">This page shows only true measurements (cuff entries / Samsung Health imports).</string>
+    <string name="s_40759f08">This project is independently developed and maintained by one person. Servers, test devices and development time are all funded by donations.</string>
     <string name="s_1387212d">This reading is outside your calibrated range, so no estimate is given. Take an ECG while PAT is closer to %1$s~%2$s ms.</string>
     <string name="s_cf17a397">This reads existing core body temperature records in Samsung Health, sourced from partner</string>
     <string name="s_d4d3d1df">This record has fewer than %1$s usable intervals; cannot recheck.</string>
@@ -1005,6 +1040,7 @@
     <string name="s_a9ab1f42">Today\'s blood oxygen</string>
     <string name="s_b014b051">Today\'s data has not synced yet; showing records already saved on this phone</string>
     <string name="s_c7a2cca7">Today\'s data isn\'t synced yet. The data below is from %1$s</string>
+    <string name="s_a9a23e2c">Today\'s goal</string>
     <string name="s_a9989a8c">Today\'s intake</string>
     <string name="s_98739e8b">Today\'s spot-check curve</string>
     <string name="s_d9a37aca">Too many abnormal intervals in this record (%1$s%%); cannot recheck.</string>
@@ -1018,17 +1054,22 @@
     <string name="s_00354263">Unknown</string>
     <string name="s_832690c0">Unknown authorization error</string>
     <string name="s_aa8addbc">Unreliable readings excluded</string>
+    <string name="s_e58ac8ab">Up to %1$s real readings per day, at least %2$s minutes apart.\nReadings beyond that limit, or taken too close together, are not valid and do not help the estimate.</string>
+    <string name="s_615f8b76">Up to 4 real blood-pressure readings per day, at least 30 minutes apart. Extra readings are not valid and do not help the estimate. Please continue tomorrow.</string>
     <string name="s_95931fef">Update check failed</string>
     <string name="s_25e52e0d">Update settings</string>
+    <string name="s_776f285b">Use this theme</string>
     <string name="s_003c55af">User</string>
     <string name="s_ccd47f8c">User profile</string>
     <string name="s_e0c5f91f">User profile read</string>
+    <string name="s_9168db60">View activity records</string>
     <string name="s_8e1a06fa">View activity records ›</string>
     <string name="s_e722a008">View all announcements</string>
     <string name="s_cf21e029">View online</string>
     <string name="s_6c6eccc0">View optical signal records ›</string>
     <string name="s_d9882205">VitalBridge is not installed on the watch yet</string>
     <string name="s_a6ab4118">VitalTrace-backup-%1$s</string>
+    <string name="s_38bf2702">Voluntary donation, for server and development costs</string>
     <string name="s_ece324b6">Waiting for the watch to connect...</string>
     <string name="s_4bb6c5f2">Wake up %1$s</string>
     <string name="s_f1f8cf6b">Watch</string>
@@ -1174,6 +1215,7 @@
     <string name="s_e2c3c638">so they never appear on the Health Connect permissions page:</string>
     <string name="s_9854c2ef">so this estimate is structurally unavailable on this device; changing rooms, posture, or measuring more often cannot change that,</string>
     <string name="s_4a4ca41e">so we can later add "backfill the last few days", and skipping a day of opening the App is no problem;</string>
+    <string name="s_00006b65">steps</string>
     <string name="s_1249982c">temperature %1$s, ECG findings %2$s, ECG waveforms %3$s, </string>
     <string name="s_8521ab5c">the absolute temperature from watch spot checks is unaffected).</string>
     <string name="s_61dd2de8">the night of %1$s</string>
@@ -1225,37 +1267,4 @@
     <string name="s_6573c7fd">⚠ The prediction is %1$s days overdue; this period may have been missed</string>
     <string name="s_bf7c8c9f">⚠ Write permissions expanded from 3 to 9 (adding heart rate variability, body fat percentage,</string>
     <string name="s_ee8994b0">⚠⚠ This is a problem with the App itself, not your settings:</string>
-    <string name="s_6f029cfb">Tap the version area repeatedly until the Developer mode button appears</string>
-    <string name="s_168ca939">Already recorded 4 readings today</string>
-    <string name="s_615f8b76">Up to 4 real blood-pressure readings per day, at least 30 minutes apart. Extra readings are not valid and do not help the estimate. Please continue tomorrow.</string>
-    <string name="s_cd60c120">Less than 30 minutes since the last reading</string>
-    <string name="s_dd8212e7">Readings taken too close together do not help the estimate. Please wait a full 30 minutes before measuring again.</string>
-    <string name="s_f5a81d48">Blood pressure estimate guide</string>
-    <string name="s_c5d7eb39">Guide</string>
-    <string name="s_ebcc53b4">1. Record one real reading first</string>
-    <string name="s_1c2c71fb">Record one real reading on the watch, or tap "Record a reading" on the phone, then take an ECG on the watch within 5 minutes.\nOnly readings and ECGs from the same time window are paired into a calibration sample.</string>
-    <string name="s_a7ee92c9">2. %1$s paired groups before any number</string>
-    <string name="s_16b709fb">An estimate appears only after %1$s valid ECGs with PAT are accumulated.\nAfter that, add %3$s real readings every %2$s days; older samples are replaced automatically so the estimate follows changes in your body.</string>
-    <string name="s_342fea22">3. Up to %1$s readings a day</string>
-    <string name="s_e58ac8ab">Up to %1$s real readings per day, at least %2$s minutes apart.\nReadings beyond that limit, or taken too close together, are not valid and do not help the estimate.</string>
-    <string name="s_1c789b71">4. Before you measure</string>
-    <string name="s_f8018281">Avoid exercise, smoking, coffee, strong tea and alcohol for 30 minutes before, and empty your bladder.\nSit quietly for 3-5 minutes; do not talk or look at your phone.\nUse a chair with a backrest, feet flat on the floor, legs uncrossed.\nRest your arm on the table so the cuff is level with your heart.\nCuff edge 2-3 cm above the elbow crease, snug enough to slip in 1-2 fingers.</string>
-    <string name="s_214a6718">Step %1$s of %2$s</string>
-    <string name="s_d278f148">Get started</string>
-    <string name="s_9917273e">Delete this reading?</string>
-    <string name="s_4b837a7d">%1$s/%2$s mmHg (%3$s).\nThis reading and its paired calibration sample will both be deleted. This cannot be undone.</string>
-    <string name="s_18c44046">Deleted</string>
-    <string name="s_f3282aa4">Recent readings</string>
-    <string name="s_2b95b682">No paired readings yet: log a reading, then take an ECG on the watch within 5 minutes and the first pair appears here.</string>
-    <string name="s_a3e1efc3">Log a cuff reading</string>
-    <string name="s_00006b65">steps</string>
-    <string name="s_a9a23e2c">Today\'s goal</string>
-    <string name="s_9168db60">View activity records</string>
-    <string name="s_03523d38">No daily step goal set in Samsung Health</string>
-    <string name="s_1ed34e70">No activity data for today yet</string>
-    <string name="s_41bd9c79">It appears after Samsung Health syncs</string>
-    <string name="s_0028a0c9">Themes</string>
-    <string name="s_776f285b">Use this theme</string>
-    <string name="s_150d4a1c">In use</string>
-    <string name="s_002aabf9">Motion</string>
 </resources>
