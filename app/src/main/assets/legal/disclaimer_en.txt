@@ -1,0 +1,26 @@
+VitalBridge · Disclaimer
+Last updated: 2026-10-16
+
+Please read this in full before using the app.
+
+1. This app is not a medical device
+It does not provide diagnosis, treatment, emergency or medication advice, holds no medical device certification, and cannot replace a clinician's judgement or a professional device's measurement.
+
+2. All values are for self-observation only
+The numbers, curves and "compared with your baseline" statements simply put your own history side by side so you can see a trend. They are not health conclusions.
+
+3. Sources and inherent limits
+Most data comes from third parties or consumer-grade sensors (Samsung Health, the watch's optical and electrical sensors) and may be missing, delayed or inaccurate.
+Our own algorithms (HRV, respiration rate, blood pressure estimate, energy and stress scores and so on) are estimates: they may produce no result at all, or a range rather than a single number.
+When a result cannot be given, we say why instead of inventing a number.
+
+4. What this app does not do
+· It does not grade results as "normal/abnormal" and does not tell you whether you are ill.
+· It gives no advice on medication, dosage, surgery or when to seek care.
+· It is not for clinical, occupational or insurance use.
+
+5. If you feel unwell, seek medical care
+If you have chest pain, difficulty breathing, altered consciousness, severe dizziness, or readings such as SpO2 or heart rate that stay clearly abnormal, do not rely on this app — contact a doctor or your local emergency number immediately.
+
+6. Risk of use
+You understand and agree that any decision or action you take based on this app is your own responsibility. To the maximum extent permitted by law, the app and its authors accept no liability for indirect or incidental loss arising from such use.

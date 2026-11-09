@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  自适应图标（Android 8.0 / API 26 起）。
+
+  两端 minSdk 分别是 29 / 30，都高于 26，所以**只需要这一份**，
+  不用再准备 mipmap-mdpi..xxxhdpi 的传统回退位图。
+  前景位的几何约束见图标生成脚本顶部注释。
+-->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_background" />
+    <foreground android:drawable="@drawable/ic_launcher_foreground" />
+</adaptive-icon>

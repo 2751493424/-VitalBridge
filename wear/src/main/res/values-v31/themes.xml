@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  启动画面（Android 12+），**固定一套深色**。
+
+  ## 为什么是固定的，而不是跟随皮肤
+  试过 `UiModeManager.setApplicationNightMode()` + `values-v31` / `values-night-v31` 双套资源，
+  **2026-10-30 在模拟器上实测证伪**：切到深色皮肤后（首页已是深灰底），
+  启动画面仍然是米白 —— 该 API 只改应用内资源解析，
+  而启动窗口是 `system_server` 在进程启动前画的，用的是 Manifest 里那个主题的**编译期**资源。
+
+  要真正跟随只能上 `activity-alias`（每套主题一个入口组件，切皮肤时改组件启用状态），
+  代价是切皮肤时桌面图标会闪一下、可能被厂商 launcher 缓存，回归面太大 —— 暂不做。
+
+  ⇒ 取「深色」这一档固定：9 套皮肤里 7 套是深色，且 OLED 上省电、
+    亮色字标在黑底上对比最强。浅色皮肤（陶瓷白 / 暖砂）启动时会有一次深→浅的切换，
+    这是当前的已知取舍。
+
+  ## ⚠ 三点必须保留
+  1. `windowBackground` 保持**陶瓷色**（不是深色）：它是 Activity 转场的回退帧底色，
+     设成陶瓷色才能和首页同色、转场不闪（见 values/themes.xml 顶部注释）。
+     启动画面用它自己的 `windowSplashScreenBackground`，两者互不影响。
+  2. 启动图标用**首页同款字标**（`ic_mark_aurora`，浅青笔画），不是 launcher 图标 ——
+     进去后视觉是连贯的。
+  3. 同名 style 在 values-v31 里是**整体替换**，所以 windowBackground /
+     windowLightStatusBar / windowAnimationStyle 三项必须全部重写。
+-->
+<resources>
+    <style name="Theme.VitalBridge" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">#FFFDFBF7</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+
+        <item name="android:windowSplashScreenBackground">#FF121214</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+    </style>
+</resources>

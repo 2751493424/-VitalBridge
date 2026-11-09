@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      页面底色（2026-11-06 整 App 深色化）。
+
+      ⚠ 比卡片底（#1D1329）暗一档，卡片才"浮"得起来。
+      ⚠ 这个值必须与 `phone/ui/AppUi.kt` 里的 `AppBg` **逐字节一致** ——
+        窗口底色走 XML、卡片底色走 Compose，两处不一致会有一条可见的接缝
+        （`check_ui_tokens` 的 [3] 就是在校验这件事）。
+      ⚠ 启动画面用的也是这个色：深色化后**不用另配** splash 背景，跟着变。
+    -->
+    <color name="app_bg">#0F0A17</color>
+</resources>

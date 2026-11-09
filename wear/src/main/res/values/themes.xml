@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ⚠ 2026-10-20 修"首页往下滑/退出时闪一下白（或黑）"：
+  原因是窗口背景还是系统默认色，Activity 进出/转场那一帧会先露出窗口底色，
+  再被我们的陶瓷底（drawBehind）覆盖 ⇒ 视觉上就是闪一下。
+  把 windowBackground 设成同一个陶瓷色，回退帧与内容同色，闪一下就没了。
+  另：windowLightStatusBar 保持 true（浅色底必须深色图标）。
+-->
+<resources>
+    <style name="Theme.VitalBridge" parent="@android:style/Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">#FFFDFBF7</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+</resources>

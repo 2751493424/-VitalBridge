@@ -1,0 +1,27 @@
+# 构建产物 / 缓存
+.gradle/
+build/
+**/build/
+.kotlin/
+.cxx/
+captures/
+*.apk
+*.aab
+*.log
+*.hprof
+
+# 本机与 IDE 配置
+local.properties
+.idea/
+*.iml
+.DS_Store
+
+# 签名密钥与口令：绝不入库
+keystore.properties
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# 第三方 SDK 二进制：授权原因不随仓库分发，获取方式见 README
+*.aar

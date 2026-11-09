@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  应用主题（2026-10-10 新建）。
+
+  ## 为什么必须自己写一个主题
+
+  原来清单里直接用系统的 `@android:style/Theme.Material.Light.NoActionBar`。
+  那个主题**不设** `android:windowLightStatusBar`（已在 SDK 36 的
+  `platforms/android-36/data/res/values/themes_material.xml` 里核实：
+  会设它的是另一个变体 `Theme.Material.Light.LightStatusBar`）——
+  于是状态栏图标走默认值 = 浅色（白），而本应用是浅色底：
+
+      ⇒ **白图标画在白底上，整条状态栏看着"什么都没有"**（用户截图反馈）。
+
+  ⚠ 这条只在 **targetSdk 35+ 强制 edge-to-edge** 之后才暴露：
+  以前状态栏有自己的一层底色（`colorPrimaryDark`），白图标压在上面还看得见；
+  现在状态栏透明、直接露出应用自己的白底，图标就"消失"了。
+
+  ## 为什么图标颜色要写死成"浅色"（2026-11-06 翻转）
+
+  应用**只有深色一套配色**（Compose 里的 Material3 颜色全在 Kotlin 常量里，
+  与这个 XML 主题无关）。所以状态栏/导航栏图标**永远**应该是浅色 ——
+  写死不会和"系统深色模式"打架（本应用不跟随系统，恒为深色）。
+
+  ⚠ 这条与上一版正好相反：浅色底时写的是 `true`（深色图标）。整 App 深色化后
+    底变成 #0F0A17，如果忘了翻 `windowLightStatusBar`，时间/电量是**黑的**，
+    压在深紫底上等于看不见（静态校验脚本守这一条）。
+-->
+<resources>
+
+    <style name="AppTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <!-- 状态栏图标用浅色（深底上的唯一正确选择） -->
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- 底部导航栏（手势条）同理 -->
+        <item name="android:windowLightNavigationBar">false</item>
+        <!--
+          两条栏都透明：让它们露出应用自己的浅色底，与 `statusBarsPadding()` 的排版
+          是同一套观感。API 35+ 系统会忽略这两个颜色（强制透明），写了不影响。
+        -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- 页面底色（比卡片暗一档，让卡片浮起来；值见 colors.xml 的 app_bg） -->
+        <item name="android:windowBackground">@color/app_bg</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+</resources>

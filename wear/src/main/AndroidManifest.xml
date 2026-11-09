@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-feature android:name="android.hardware.type.watch" />
+    <uses-feature android:name="android.hardware.sensor.heartrate" android:required="false" />
+
+    <!-- 蓝牙直连通道 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!-- 心率测量 -->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+
+    <!--
+      测量结束的震动提示（2026-10-07）。
+
+      ⚠⚠ 这一条**必须在清单里声明**：它是 normal 权限、不需要运行期申请，但**不声明时
+      `Vibrator.vibrate()` 静默无效** —— 不报错、不崩溃、什么都不发生。表现就是
+      "代码看着没问题，功能就是不工作"，与 HC 写入权限那次的坑同类。
+    -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- WiFi 自更新（用户点一次才联网，不做后台） -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- OTA：接收手机推来的手表安装包后拉起系统安装器 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- 安装包就绪时用全屏意图直接拉起安装页（不受后台启动限制） -->
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+
+    <!-- 三星传感器管理器：血氧/ECG 属于"额外健康数据"，需要此权限才会下发测量值 -->
+    <uses-permission android:name="com.samsung.android.hardware.sensormanager.permission.READ_ADDITIONAL_HEALTH_DATA" />
+
+    <!--
+      包可见性声明（Android 11+ 起强制）。
+
+      不声明的话，我们**看不见**别的 App 的任何组件：`resolveActivity` 返回 null，
+      `startActivity` 直接抛 ActivityNotFoundException。这不是"权限没申请"，
+      是系统从 11 开始默认把别的包遮起来。
+
+      这里只需要三星健康手表端这一个包 —— 首页那个「抗氧化指数」入口要跳到
+      它里面的 `app.antioxidant.AntioxidantActivity`（见 MainActivity 里的说明）。
+    -->
+    <queries>
+        <package android:name="com.samsung.android.wear.shealth" />
+    </queries>
+
+    <application
+        android:name=".WearApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VitalBridge">
+
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- OTA：把接收到的 apk 以 content:// 交给系统安装器（Android 7+ 不许 file://） -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/ota_paths" />
+        </provider>
+
+        <!-- ⚠ 2026-10-26 `OtaWindowService` 已删：它只为"蓝牙收包窗口"存在，
+             而整条蓝牙推包链路已经移除（首次安装走手机端「安装」页的无线 ADB）。 -->
+
+        <receiver
+            android:name=".OtaInstallReceiver"
+            android:exported="false" />
+    </application>
+</manifest>

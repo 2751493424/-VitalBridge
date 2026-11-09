@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 蓝牙直连通道（不依赖 Google 服务的备用同步链路） -->
+    <!-- 联网只有两处：拉远程公告（静态 JSON）+ 检查/下载应用更新（均不带设备标识）。
+         它只管"发通知"，失败一律静默（见 AnnouncementRepository），不影响任何功能。 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+      应用内更新（2026-10-16）：下载安装包后交给系统安装器。
+      ⚠ Android 8+ **必须**声明它，否则 startActivity 会被系统直接拒绝（静默失败）。
+      ⚠ 用户侧还会再走一次「允许安装未知应用」的系统确认页 —— 这是系统强制，绕不过去。
+    -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" android:maxSdkVersion="30" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!-- Health Connect 写入（安卓官方健康数据中枢，三星健康可与其同步）
+         ⚠⚠ 这里声明的每一项必须与 `HealthConnectManager.writePermissions` **一一对应**：
+         **HC 只显示应用在清单里声明过**的权限 —— 少声明一项，那一项在 HC 的
+         「应用访问权限」页里就**根本不会出现**，用户看到的是"点授权没反应"、
+         "手动也找不到它"。2026-09-24 正是这个：写入从 3 项扩到 9 项时
+         只改了代码、没改清单，那 6 项在权限页里始终不出现。
+         两道保险：运行时有 `HealthConnectManager.missingManifestPermissions` 自检
+         （界面会显眼报出来），出包校验里也有一条断言钉住这 9 个字符串。
+         ⚠ 权限名**不能从 record 类名直推**：`HeartRateVariabilityRmssdRecord` 对应的是
+         `WRITE_HEART_RATE_VARIABILITY`（**没有 RMSSD**）。名称一律以 HC 的 jar 为准。 -->
+    <uses-permission android:name="android.permission.health.WRITE_HEART_RATE" />
+    <uses-permission android:name="android.permission.health.WRITE_BLOOD_PRESSURE" />
+    <uses-permission android:name="android.permission.health.WRITE_OXYGEN_SATURATION" />
+    <uses-permission android:name="android.permission.health.WRITE_HEART_RATE_VARIABILITY" />
+    <uses-permission android:name="android.permission.health.WRITE_BODY_FAT" />
+    <uses-permission android:name="android.permission.health.WRITE_LEAN_BODY_MASS" />
+    <uses-permission android:name="android.permission.health.WRITE_WEIGHT" />
+    <uses-permission android:name="android.permission.health.WRITE_HEIGHT" />
+    <uses-permission android:name="android.permission.health.WRITE_BASAL_METABOLIC_RATE" />
+
+    <!-- Health Connect 读取经期记录（模块 #13：只读不写，导入用户已有的经期历史） -->
+    <uses-permission android:name="android.permission.health.READ_MENSTRUATION" />
+
+    <!--
+      Android 11+（API 30+）的包可见性。
+      ⚠ **不写这段代码能编译通过，只在运行期抛异常**（"Package not visible"）——
+        所以它看起来像"加了也没用"，而少了它整个入口直接不可用。
+
+      「用户」页有一个跳三星健康的入口（抗氧化指数）。
+      组件名是**未公开的内部 Activity**，随三星健康版本可能变 ⇒
+      跳转必须带兜底，详见 MainActivity 里那个函数的注释。
+    -->
+    <queries>
+        <package android:name="com.samsung.android.health" />
+    </queries>
+
+    <application
+        android:name=".GeminiApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Health Connect 权限说明页：声明后应用才会出现在"健康数据共享"的应用列表中 -->
+        <activity
+            android:name=".HCRationaleActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE" />
+            </intent-filter>
+            <!-- Android 14+ -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
+                <category android:name="android.intent.category.HEALTH_PERMISSIONS" />
+            </intent-filter>
+        </activity>
+
+        <!-- 接收手表发来的 Data Layer 消息（包括 App 退到后台时） -->
+        <service
+            android:name=".PhoneListenerService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+                <data
+                    android:host="*"
+                    android:pathPrefix="/gemini"
+                    android:scheme="wear" />
+            </intent-filter>
+        </service>
+    
+        <!--
+          应用内更新：把下载好的 APK 交给系统安装器。
+          ⚠ Android 7+ **禁止**把 `file://` 暴露给别的应用（会抛 FileUriExposedException），
+            必须用 FileProvider 发一个 `content://` URI。
+          ⚠ authority 用 `${applicationId}.fileprovider` 占位符 —— 包名改过一次，
+            写死就会在下次改名时静默失效。
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+</application>
+</manifest>

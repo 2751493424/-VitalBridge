@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Wear Data Layer 能力声明：手机端据此发现运行本应用的手表 -->
+    <string-array name="android_wear_capabilities">
+        <item>gemini_health_sync</item>
+    </string-array>
+</resources>

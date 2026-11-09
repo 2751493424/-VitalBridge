@@ -1,0 +1,50 @@
+VitalBridge · Privacy Policy
+Last updated: 2026-10-28
+
+In one line: this app never uploads your health data. Everything stays on this phone; the only upload is optional anonymous usage statistics (see section 6), which you can turn off.
+
+1. Where the data comes from
+· Samsung Health: with your permission, we read sleep, heart rate, SpO2, steps and similar records.
+· The watch app: ECG, SpO2, temperature and other measurements you take on the watch are sent here over Bluetooth.
+· Manual entries: blood pressure, glucose, cycle records and so on.
+This data is used only for display and calculation on this device.
+
+2. Where the data is stored
+Everything is stored in the app's private database on this phone. Nothing is uploaded to any server.
+Uninstalling the app deletes all of it, and there is also a "clear data" action inside the app.
+"Backup" is triggered by you and the exported file is saved wherever you choose.
+
+3. Network use
+The app goes online in only three situations. All are initiated by the app itself. The first two carry no device identifier, account or health data; the third is optional anonymous usage statistics:
+
+- Fetching announcements: on launch it reads a public announcement file (JSON) so it can show you release notices.
+  Announcement URL: https://REPLACE-ME.invalid/announcement.json
+- Checking for and installing updates: on launch, or when you tap "Check for updates", it compares the newest version listed in that file. Only after you confirm does it download the new package from the address given there, verify its size and SHA-256, and hand it to the system installer. If you do not confirm, nothing is downloaded.
+- Anonymous usage statistics (optional, off by default): only after you tap "Agree and continue" on first launch, the app sends the app version, phone model, OS version, interface language, feature usage such as "an ECG was measured and whether it succeeded", and a random install ID. No measurement values are included, and no phone number, account, location or device identifier is collected. See section 6.
+
+Failing to fetch the announcement or update information does not affect any local feature.
+Tapping "View online" under About opens the public privacy page in your system browser; that request is made by the browser, not by this app.
+
+4. Why the permissions are needed
+· Bluetooth: to connect to the watch and receive measurements.
+· Network: only to fetch announcements, check for and download app updates, and (optionally) send anonymous usage statistics.
+· Health Connect read/write: to write this app's measurements back into system health data (optional, revocable at any time) and to read records such as menstruation.
+
+5. Third parties
+There are no accounts, no ads and no third-party analytics SDKs. The only outbound data is our own anonymous usage statistics (section 6), written to our own Cloudflare service. Your data is never shared with or sold to anyone.
+
+6. Anonymous usage statistics
+- You decide: we ask on first launch, and the default is off. You can turn it off at any time with the "Anonymous usage stats" switch on the User page.
+- What is sent: app version, phone model and OS version, interface language, event name and outcome (for example "ECG measurement succeeded"), and a random install ID.
+- What is never sent: any measurement value (heart rate, blood pressure, SpO2, temperature, sleep, etc.), nor your phone number, account, location, IMEI, Android ID or similar device identifiers.
+- Where it goes: only to our own Cloudflare statistics service, to see version and device distribution. Turning the switch off stops all sending immediately and deletes the install ID.
+- The install ID is a random string unrelated to your hardware. Reinstalling the app replaces it, and it cannot be used to identify you.
+
+7. Your choices
+You can revoke Samsung Health or Bluetooth permission in system settings at any time, and uninstalling the app removes all local data.
+
+8. Children
+This app is not intended for children under 13.
+
+9. Changes and contact
+If this policy changes, the update ships with the app and is shown inside it. Questions: contact@example.com

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 手机端同样声明此能力：手表端靠查询它来发现手机 -->
+    <string-array name="android_wear_capabilities">
+        <item>gemini_health_sync</item>
+    </string-array>
+</resources>

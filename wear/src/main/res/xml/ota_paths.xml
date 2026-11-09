@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  OTA 只开放 **一个子目录**：应用外部私有目录下的 ota/。
+  ⚠ 不要把根目录暴露出去（那等于把整个 App 私有区交给任何拿到 uri 的应用）。
+-->
+<paths>
+    <external-files-path name="ota" path="ota/" />
+</paths>

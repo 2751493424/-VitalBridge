@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  自适应图标的背景层。
+
+  用矢量渐变而不是位图：可见区域被前景层完全盖住，背景只在启动器的视差/
+  缩放动画里露一下，不值得为它准备 5 个密度的模糊位图。
+  三个色标由图标生成脚本从源图的左上角 / 中心 / 右下角取样，
+  刻意与前景图同色系 —— 改图标时重跑那个脚本即可。
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:type="linear"
+        android:angle="315"
+        android:startColor="#71FB81"
+        android:centerColor="#82E9F8"
+        android:endColor="#0459BA" />
+</shape>
