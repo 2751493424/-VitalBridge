@@ -18,6 +18,7 @@
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
+  html { overflow-x: hidden; }
   body {
     min-height: 100vh;
     background: var(--bg);
@@ -32,14 +33,15 @@
   body::before, body::after {
     content: "";
     position: fixed;
-    width: 70vmax; height: 70vmax;
+    width: 90vw; height: 90vw;
+    max-width: 620px; max-height: 620px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(15, 52, 67, .85), rgba(15, 52, 67, 0) 68%);
     pointer-events: none;
     z-index: 0;
   }
-  body::before { left: -32vmax; bottom: -40vmax; }
-  body::after { right: -32vmax; bottom: -46vmax; }
+  body::before { left: -34vw; bottom: -30vw; }
+  body::after { right: -34vw; bottom: -38vw; }
 
   main {
     position: relative;
