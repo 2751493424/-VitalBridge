@@ -64,8 +64,8 @@
     "sha256": "1109274a6c7f4366a772719e5b6c3e3316e48d13c989713e1399a201e9c07c65",
     "notes": "1. 公告读取顺序调整为：Cloudflare 直连 → GitHub → 自有域名，谁读到就从谁那里下包\n2. 新增 GitHub 专属公告：从 GitHub 读到公告时，安装包直接从对应版本的 Release 下载\n3. 其余与 1.220 一致",
     "mirrors": [
-      "https://pub-d93c32cbb43f4944861b26d4ebe2fa9e.r2.dev/apk/vitalbridge-latest.apk",
-      "https://cdn.hl-jyd.cc.cd/apk/vitalbridge-latest.apk"
+      "https://pub-d93c32cbb43f4944861b26d4ebe2fa9e.r2.dev/apk/vitalbridge-221.apk",
+      "https://cdn.hl-jyd.cc.cd/apk/vitalbridge-221.apk"
     ]
   }
 }
