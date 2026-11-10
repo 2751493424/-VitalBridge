@@ -59,13 +59,13 @@
   "update": {
     "versionCode": 220,
     "versionName": "1.220",
-    "url": "https://pub-d93c32cbb43f4944861b26d4ebe2fa9e.r2.dev/apk/vitalbridge-latest.apk",
+    "url": "https://github.com/2751493424/-VitalBridge/releases/download/v220/vitalbridge-latest.apk",
     "sizeBytes": 11309123,
     "sha256": "90d16f25e121f819954c40d786ad6ee8be8ff4ad22e8c0d72b2ec810319f0609",
     "notes": "1. 安装包下载支持断点续传：网络中断后从已下载的位置接着传，不必整包重下\n2. 新增备用下载源：主地址失败会自动依次尝试其他源，每个源都照旧校验字节数与哈希\n3. 其余与 1.219 一致",
     "mirrors": [
-      "https://cdn.hl-jyd.cc.cd/apk/vitalbridge-latest.apk",
-      "https://github.com/2751493424/-VitalBridge/releases/download/v220/vitalbridge-latest.apk"
+      "https://pub-d93c32cbb43f4944861b26d4ebe2fa9e.r2.dev/apk/vitalbridge-latest.apk",
+      "https://cdn.hl-jyd.cc.cd/apk/vitalbridge-latest.apk"
     ]
   }
 }
