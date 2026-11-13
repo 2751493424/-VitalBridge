@@ -4,7 +4,7 @@
 
 面向三星 Galaxy Watch（Wear OS / One UI Watch）的健康数据同步与查看工具，由手机端、手表端和一个共享模块组成。
 
-**下载手机版**：[vitalbridge-latest.apk](https://github.com/2751493424/-VitalBridge/releases/latest/download/vitalbridge-latest.apk) · `1.221`（versionCode 221） · arm64-v8a · Android 10 及以上（历史版本见 [Releases](https://github.com/2751493424/-VitalBridge/releases)）
+**下载手机版**：[vitalbridge-latest.apk](https://github.com/2751493424/-VitalBridge/releases/latest/download/vitalbridge-latest.apk) · `1.222`（versionCode 222） · arm64-v8a · Android 10 及以上（历史版本见 [Releases](https://github.com/2751493424/-VitalBridge/releases)）
 
 本仓库包含三端源码、资源与构建脚本；安装包发布在 Releases，不入库。三星 Health SDK、签名密钥、历史安装包、内部文档与调试产物均不包含，获取方式见下文。
 

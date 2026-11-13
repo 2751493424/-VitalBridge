@@ -47,7 +47,7 @@
     {
       "id": "2026-10-16-second-release",
       "title": "欢迎使用脉迹免费版",
-      "date": "2026-11-10",
+      "date": "2026-11-13",
       "level": "normal",
       "platforms": [
         "phone"
@@ -57,15 +57,15 @@
     }
   ],
   "update": {
-    "versionCode": 221,
-    "versionName": "1.221",
-    "url": "https://github.com/2751493424/-VitalBridge/releases/download/v221/vitalbridge-latest.apk",
-    "sizeBytes": 11309127,
-    "sha256": "1109274a6c7f4366a772719e5b6c3e3316e48d13c989713e1399a201e9c07c65",
-    "notes": "1. 公告读取顺序调整为：Cloudflare 直连 → GitHub → 自有域名，谁读到就从谁那里下包\n2. 新增 GitHub 专属公告：从 GitHub 读到公告时，安装包直接从对应版本的 Release 下载\n3. 其余与 1.220 一致",
+    "versionCode": 222,
+    "versionName": "1.222",
+    "url": "https://github.com/2751493424/-VitalBridge/releases/download/v222/vitalbridge-latest.apk",
+    "sizeBytes": 11309123,
+    "sha256": "73f49d7c3b44ec940c9aa1ed8ddf3b4398e8e5e898192a5a48fa753d6f425187",
+    "notes": "1. 手表更新的清单源与下载源改为与手机一致：R2 直连 → GitHub → 自有域名，主地址失败自动换源\n2. 手表安装包下载支持断点续传，网络中断后从已下载位置继续\n3. 手表下载域名白名单扩充为三条（此前只有自有域名，单点故障时无法切换）\n4. 手机包同时发布，版本 1.222",
     "mirrors": [
-      "https://pub-d93c32cbb43f4944861b26d4ebe2fa9e.r2.dev/apk/vitalbridge-221.apk",
-      "https://cdn.hl-jyd.cc.cd/apk/vitalbridge-221.apk"
+      "https://pub-d93c32cbb43f4944861b26d4ebe2fa9e.r2.dev/apk/vitalbridge-222.apk",
+      "https://cdn.hl-jyd.cc.cd/apk/vitalbridge-222.apk"
     ]
   }
 }
