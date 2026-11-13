@@ -1,0 +1,12 @@
+{
+  "version": 203,
+  "size": 4591342,
+  "sha256": "31ca292a5d51677fec9efd5d5eea257c1c563e850de5567da07dac810ba4c682",
+  "file": "vitalbridge-watch-v203.apk",
+  "notes": "1. 清单源与下载源改为与手机一致（R2 直连 → GitHub → 自有域名）\\n2. 安装包下载支持断点续传",
+  "url": "https://github.com/2751493424/-VitalBridge/releases/download/v222/vitalbridge-watch-v203.apk",
+  "mirrors": [
+    "https://pub-d93c32cbb43f4944861b26d4ebe2fa9e.r2.dev/apk/vitalbridge-watch-v203.apk",
+    "https://cdn.hl-jyd.cc.cd/apk/vitalbridge-watch-v203.apk"
+  ]
+}
